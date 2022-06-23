@@ -1,7 +1,6 @@
 package com.crowdar.examples.services;
 
 import com.crowdar.core.actions.MobileActionManager;
-import com.crowdar.driver.DriverManager;
 import com.crowdar.examples.constants.LoginConstants;
 import org.testng.Assert;
 
@@ -12,18 +11,23 @@ import org.testng.Assert;
  */
 public class LoginService {
 
-    public static void doLogin(String email, String password){
+    public static void putCorreo(String email){
         MobileActionManager.setInput(LoginConstants.EMAIL_INPUT_LOCATOR, email);
-        MobileActionManager.setInput(LoginConstants.PASSWORD_INPUT_LOCATOR, password);
-        MobileActionManager.click(LoginConstants.LOGIN_BUTTON_LOCATOR);
+    }
+    public static void putClave(String clave){
+        MobileActionManager.setInput(LoginConstants.PASSWORD_INPUT_LOCATOR, clave);
     }
 
-    public static void pantallaDeInicioCargada(String Locator){
+    public static void clickOn(String label){
+        MobileActionManager.click(LoginConstants.BUTTON_LOCATOR, label);
+    }
+
+    public static void seVisualizaEtiqueta(String Locator){
         MobileActionManager.waitVisibility(LoginConstants.LABEL, Locator);
     }
-    public static void isViewLoaded( ){
+    public static void pantallaDeInicioCargada( ){
         MobileActionManager.waitVisibility(LoginConstants.LOGIN_LABEL);
-        //MobileActionManager.isVisible(Assert.assertTrue( MobileActionManager.isVisible(LoginConstants.LOGIN_BUTTON_LOCATOR), LoginConstants.VIEW_NOT_DISPLAYED_MESSAGE););
+        Assert.assertTrue(MobileActionManager.isVisible(LoginConstants.EMAIL_INPUT_LOCATOR));
     }
 
 }

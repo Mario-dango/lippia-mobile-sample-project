@@ -7,30 +7,41 @@ import com.crowdar.examples.services.LoginService;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import cucumber.api.java.en.And;
 
-/**
- * This class handles the steps in the features files and connects with the service in case of having business logic.
- * Otherwise, if it is a simple action, like clicking a button and it has nothing related to business logic, is correct to put here.
- */
 public class LoginSteps extends PageSteps {
 
     @Given("Tener instalado la aplicación en el dispositivo")
     public void isHomeLoginPageVisible() {
-        LoginService.pantallaDeInicioCargada("Login headline");
+        LoginService.pantallaDeInicioCargada();
     }
     @Given("Abrir la aplicación en el dispositivo")
-    public void isHomePageVisible() {
-        LoginService.isViewLoaded();
+    public void verificaEstarEnPaginaInicio() {
+        LoginService.pantallaDeInicioCargada();
     }
 
-    @When ("^El usuario ingrese con sus credenciales: '(.*)', '(.*)'$")
-    public void toDoLogin(String correo, String contrasena) {
-        LoginService.doLogin(correo, contrasena);
+    @When ("^El usuario ingresa con correo registrado '(.*)'$")
+    public void toPutEmail(String correo) {
+        LoginService.putCorreo(correo);
+    }
+
+    @And ("^El usuario ingresa la clave asociada a la cuenta '(.*)'$")
+    public void toPutPassword(String password) {
+        LoginService.putClave(password);
+    }
+    @And ("^El usuario hace click en el boto de '(.*)'$")
+    public void toClickLoginButton(String label) {
+        LoginService.clickOn(label);
     }
 
     @Then("Se muestra el dashboard correspondiente a la cuenta")
     public void isDashBoardVisible() {
-        LoginService.pantallaDeInicioCargada("Add time entry");
+        LoginService.seVisualizaEtiqueta("Add time entry");
+    }
+
+    @Then("^Se visualiza el menu '(.*)'$")
+    public void seVisualizaEtiqueta(String label) {
+        LoginService.seVisualizaEtiqueta(label);
     }
 
 }

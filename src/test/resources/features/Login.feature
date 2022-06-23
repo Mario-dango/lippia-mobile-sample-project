@@ -1,13 +1,12 @@
 Feature: Prueba de distintos ingresos a la aplicación Clockify
-  Como usuario de android cuyo dispositivo es Pixel4
-  Quiero acceder a mi cuenta de Clockify
-  Para poder interactuar con la aplicación con mi cuenta
-  @test_mobile
+
+  @test_login_success
   Scenario Outline: prueba login exitoso
     Given Tener instalado la aplicación en el dispositivo
-    #Given Abrir la aplicación en el dispositivo
-    When El usuario ingrese con sus credenciales: '<email>', '<password>'
-    Then Se muestra el dashboard correspondiente a la cuenta
+    When El usuario ingresa con correo registrado '<email>'
+    And El usuario ingresa la clave asociada a la cuenta '<password>'
+    And El usuario hace click en el boto de 'login'
+    Then Se visualiza el menu 'Open navigation drawer'
 
     Examples:
       | email               | password   |
