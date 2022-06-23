@@ -15,7 +15,7 @@ public class EntriesConstants {
     public static final String DATE_ID_ENTRY = "id:timeentry_start_date";
     public static final String PREVIOUS_MONTH_ENTRY = "ACCESSIBILITY_ID:Previous month";
     public static final String NEXT_MONTH_ENTRY = "ACCESSIBILITY_ID:Next month";
-    public static final String DAY_ENTRY = "ACCESSIBILITY_ID:%s %s %s";
+    public static final String DAY_ENTRY = "ACCESSIBILITY_ID:%s";
     public static final String START_TIME = "ACCESSIBILITY_ID:START";
     public static final String END_TIME = "ACCESSIBILITY_ID:END";
 

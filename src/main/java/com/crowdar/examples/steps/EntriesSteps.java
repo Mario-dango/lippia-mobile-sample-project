@@ -56,18 +56,8 @@ public class EntriesSteps extends PageSteps {
         EntriesService.agregarMinutos(hours, lugar);
     }
 
-    @And("^El usuario agrega el (.*) año desde el calendario$")
-    public void elUsuarioAgregaElAnioCalendario(Integer anio){
-        EntriesService.agregarYear(anio);
-    }
-
-    @And("^El usuario agrega el (.*) mes desde el calendario$")
-    public void elUsuarioAgregaElMesCalendario(Integer mes){
-        EntriesService.agregarMes(mes);
-    }
-
-    @And("^El usuario agrega el (.*) día desde el calendario$")
-    public void elUsuarioAgregaElDiaCalendario(Integer dia){
-        EntriesService.agregarDay(dia);
+    @And("^El usuario busca la fecha deseada (.*) en el calendario con las flechas$")
+    public void elUsuarioAgregaFecha(String fechaComienzo){
+        EntriesService.agregarFecha(fechaComienzo);
     }
 }

@@ -1,4 +1,5 @@
-Feature: Prueba de distintos ingresos a la aplicación Clockify
+@test_login
+Feature: Prueba de ingreso a la aplicación Clockify
 
   @test_login_success
   Scenario Outline: prueba login exitoso

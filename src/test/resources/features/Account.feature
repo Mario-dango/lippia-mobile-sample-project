@@ -1,5 +1,5 @@
 @test_account_options
-Feature: Prueba de distintos ingresos a la aplicación Clockify
+Feature: Prueba de distintas opciones dentro de los usuarios de la aplicación Clockify
 
   Background:
     Given Tener instalado la aplicación en el dispositivo
